@@ -1,0 +1,52 @@
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-customer-menu">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-user-menu">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+
+    <a class="navbar-brand" href="#">Startseite</a>
+    <div class="collapse navbar-collapse" id="bs-customer-menu">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Kalender<span class="sr-only">(current)</span></a></li>
+        <li><a href="#">Projekte</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Kunde <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li routerLinkActive="active"><a href="#">Neuer Kunde</a></li>
+            <li class="divider"></li>
+            <li routerLinkActive="active"><a href="#">Suche Kunde</a></li>
+          </ul>
+        </li>
+
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Benutzer  <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li routerLinkActive="active"><a routerLink="users">Alle Benutzer</a></li>
+            <li class="divider"></li>
+            <li routerLinkActive="active"><a routerLink="users/id/new">Neuer Benutzer</a></li>
+            <li class="divider"></li>
+            <li routerLinkActive="active"><a routerLink="users">Suche Benutzer</a></li>
+          </ul>
+        </li>
+        <li><a href="#">Logout</a></li>
+      </ul>
+
+    </div>
+
+
+  </div>
+</nav>
