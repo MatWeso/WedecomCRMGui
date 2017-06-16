@@ -1,0 +1,88 @@
+<!-- Model Driven Form
+  <form [formGroup] = "userNewForm" class="form-horizontal">
+    <fieldset>
+      <legend>
+        Benutzer {{userNewForm}}
+      </legend>
+      <div class="form-group" formGroupName="userData">
+        <label for="id" class="col-lg-2 control-label">Id</label>
+        <div class="col-lg-10">
+          <input type="text" [ngModel]="(user)?.id" (ngModelChange)="user.id=$event" id="id" formControlName ="id" [readonly]="true"  >
+        </div>
+      </div> 
+      <div class="form-group" formGroupName="userData">
+        <label for="username" class="col-lg-2 control-label">Benutzername</label>
+        <span *ngIf="userNewForm.controls.userData.controls.username.errors?.required">Benutzername ist ein Pflichtfeld</span>
+        <span *ngIf="userNewForm.controls.userData.controls.username.errors?.minlength">Errors {{ userNewForm.controls.userData.controls.username.errors?.minlength.actualLength}}</span>
+        <span *ngIf="username.errors?.minlength">3. Errors</span>
+        
+        <div class="col-lg-10">
+          <input type="text" [ngModel]="(user)?.username" (ngModelChange)="user.username=$event" class="form-control" id="username" formControlName ="username"  >
+        </div>
+      </div>
+      <div class="form-group" formGroupName="userData">
+        <label for="password" class="col-lg-2 control-label">Passwort</label>
+        <div class="col-lg-10">
+          <input type="text" [ngModel]="(user)?.password" (ngModelChange)="user.password=$event" class="form-control" id="password" formControlName ="password"  >
+        </div>
+      </div>
+      <div class="form-group" formGroupName="additionalData">
+        <label for="password2" class="col-lg-2 control-label">Passwort wiederholen</label>
+        <div class="col-lg-10">
+          <input type="text" [ngModel]="password2" (ngModelChange)="password2=$event" class="form-control" id="password2" formControlName ="password2"  >
+        </div>
+      </div>      
+      <div class="form-group" formGroupName="userData">
+        <label for="active" class="col-lg-2 control-label">Aktiv?</label>
+        <div class="col-lg-10" >
+          <input type="checkbox" [ngModel]="(user)?.active" (ngModelChange)="user.active=$event" id="active" formControlName ="active" >
+        </div>
+      </div> 
+      <div class="form-group">
+        <div class="col-lg-10 col-lg-offset-2">
+          <button type="submit" (click) = "save()" class="btn btn-primary" [disabled]="!userNewForm.valid">Speichern</button>
+        </div>
+      </div>
+    </fieldset>
+  </form>
+-->
+
+<!-- Reactive -->
+<div class="container">
+<h2>Neuen Benutzer anlegen</h2>
+   <div [hidden]="userCreated">  
+   <form (ngSubmit)="onSubmit(ngForm)" #ngForm="ngForm">
+			<md-grid-list cols="1" rowHeight="50px">
+				<md-grid-tile [colspan]="1" [rowspan]="1">
+					<md-input-container>
+						<input mdInput id="username" type="text" required [rangeLength]="[4,10]" [(ngModel)]="user.username" #username = "ngModel" name="username" placeholder="Benutzername">
+            <md-error *ngIf="username.errors?.rangeLength">Länge nicht eingehalten</md-error>
+            <md-error *ngIf="username.errors?.duplicate == true">Benutzername bereits vergeben</md-error>
+          </md-input-container>
+        </md-grid-tile>
+        <md-grid-tile [colspan]="1" [rowspan]="1">          
+          <md-input-container>
+            <input mdInput id="password" type="password" required [(ngModel)]="user.password" name="password" placeholder="Passwort">
+          </md-input-container>
+        </md-grid-tile>
+        <md-grid-tile [colspan]="1" [rowspan]="1">            
+          <md-input-container>
+            <input mdInput id="confirmedPassword" type="password" required [(ngModel)]="confirmedPassword" #pw2 = "ngModel" name="confirmedPassword" placeholder="Passwort wiederholen">
+            <md-error *ngIf="pw2.errors?.equalTo">Passwörter stimmen nicht überein</md-error>
+          </md-input-container>
+        </md-grid-tile>
+				
+        <md-grid-tile [colspan]="1" [rowspan]="1">
+          <button class="mat-primary" md-raised-button type="submit" md-raised-button [disabled]="!ngForm.valid">Speichern</button>
+        </md-grid-tile>
+			</md-grid-list>
+      
+     </form>
+   </div>
+
+
+  <div class="row" [hidden]="!userCreated">
+    <h3>User created successfully!</h3>
+	</div>
+
+  </div>

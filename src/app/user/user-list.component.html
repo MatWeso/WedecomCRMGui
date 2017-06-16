@@ -2,19 +2,21 @@
 <table class="table table-bordered">
   <thead>
     <tr>
-        <th>Username</th>
-        <th>IsActive?</th>
-        <th>Edit</th>
-        <th>Delete</th>
+      <th>Username</th>
+      <th>IsActive?</th>
+      <th>Edit</th>
+      <th>Delete</th>
     </tr>
 
     <tr *ngFor="let user of users | async">
-        <td>{{user.username}}</td>
-        <td>{{user.active}}</td>
-        <td>
-          <a class="glyphicon glyphicon-pencil" [routerLink] ="['id', user.id]"></a>
-        </td> 
-        <td ><a class="glyphicon glyphicon-trash" (click) = "delete(user)"></a></td>
+      <td>{{user.username}}</td>
+      <td>{{user.active}}</td>
+      <td>
+        <a class="glyphicon glyphicon-pencil" [routerLink]="['edit', user.id]"></a>
+      </td>
+      <td>
+        <a class="glyphicon glyphicon-trash" (click)="delete(user)"></a>
+      </td>
     </tr>
   </thead>
 </table>
