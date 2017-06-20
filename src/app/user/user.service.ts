@@ -5,11 +5,12 @@ import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 import 'rxjs/Rx';
 import { User } from './user';
-import { NgRedux } from "ng2-redux/lib";
-import { IAppState } from "app/store";
-import { SERVICE_REQUEST, LOAD_USERS_SUCCESS, LOAD_USER_BY_ID, UPDATE_USER, UPDATE_USER_ERROR, CREATE_USER, SERVICE_REQUEST_ERROR, CHECK_USERNAME_SUCCESS } from "app/user/actions";
+
+import { IAppState } from "../store";
+import { SERVICE_REQUEST, LOAD_USERS_SUCCESS, LOAD_USER_BY_ID, UPDATE_USER, UPDATE_USER_ERROR, CREATE_USER, SERVICE_REQUEST_ERROR, CHECK_USERNAME_SUCCESS } from "./actions";
 import { Subscription } from "rxjs/Subscription";
-import { AuthService } from "app/shared/auth.service";
+import { AuthService } from "../shared/auth.service";
+import { NgRedux } from '@angular-redux/store';
 import { OAuthService } from "angular-oauth2-oidc/dist";
 
 @Injectable()

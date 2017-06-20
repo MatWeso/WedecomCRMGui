@@ -1,9 +1,9 @@
 
 
 
-import { CREATE_USER, DELETE_USER, UPDATE_USER, LIST_USERS, LOAD_USERS_SUCCESS, LOAD_USER_BY_ID, SERVICE_REQUEST, SERVICE_REQUEST_ERROR, CHECK_USERNAME_SUCCESS } from "app/user/actions";
+import { CREATE_USER, DELETE_USER, UPDATE_USER, LIST_USERS, LOAD_USERS_SUCCESS, LOAD_USER_BY_ID, SERVICE_REQUEST, SERVICE_REQUEST_ERROR, CHECK_USERNAME_SUCCESS } from "./actions";
 import { tassign } from "tassign/lib";
-import { User } from "app/user/user";
+import { User } from "./user";
 import { Observable } from "rxjs/Observable";
 
 export interface IUserState {

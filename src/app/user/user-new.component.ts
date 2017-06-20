@@ -6,9 +6,10 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { UserService } from './user.service';
 import { User } from './user';
 import { AuthService } from '../shared/auth.service';
+import { UserValidators } from './userValidators';
 import { select } from "@angular-redux/store";
 import { CustomValidators } from 'ng2-validation';
-import { UserValidators } from "app/user/userValidators";
+
 @Component({
   selector: 'user-new',
   templateUrl: 'user-new.component.html',

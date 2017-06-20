@@ -3,8 +3,8 @@ import { Observable }        from 'rxjs/Observable';
 import { NgRedux, select } from '@angular-redux/store'; 
 import { UserService } from './user.service';
 import { User } from './user';
-import { IAppState } from "app/store";
-import { LIST_USERS } from "app/user/actions";
+import { IAppState } from "../store";
+import { LIST_USERS } from "./actions";
 
 @Component({
   selector: 'users',

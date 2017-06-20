@@ -17,21 +17,21 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { HomeComponent } from './home/home.component';
 import { UserListComponent } from './user/user-list.component';
 import { UserEditComponent } from './user/user-edit.component';
-import { UserNewComponent } from 'app/user/user-new.component';
+import { UserNewComponent } from './user/user-new.component';
 //Spielwiese
-import { SpielwieseComponent } from 'app/spielwiese/spielwiese.component';
-import { UsernameInputComponent } from 'app/spielwiese/username-input.component';
+import { SpielwieseComponent } from './spielwiese/spielwiese.component';
+import { UsernameInputComponent } from './spielwiese/username-input.component';
 //service
 import { UserService} from './user/user.service';
 import { AuthService } from './shared/auth.service';
 //Redux
-import { IAppState, rootReducer, INITIAL_STATE } from 'app/store';
-import { UserValidators } from 'app/user/userValidators';
+import { IAppState, rootReducer, INITIAL_STATE } from './store';
+import { UserValidators } from './user/userValidators';
 
 import { CustomFormsModule } from 'ng2-validation';
 import { OAuthModule } from 'angular-oauth2-oidc';
 import { LoginComponent } from './login/login.component';
-import { AuthGuard } from "app/shared/auth.guard";
+import { AuthGuard } from "./shared/auth.guard";
 
 
 @NgModule({

@@ -1,9 +1,9 @@
 
 
 import { AbstractControl, FormControl, Validator } from "@angular/forms";
-import { UserService } from "app/user/user.service";
+import { UserService } from "./user.service";
 import { Observable } from "rxjs/Observable";
-import { User } from "app/user/user";
+import { User } from "./user";
 
 export class UserValidators{
 

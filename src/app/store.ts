@@ -1,7 +1,7 @@
 import { tassign } from 'tassign'; 
 import { combineReducers } from 'redux'; 
 import { IUserState, USER_INITIAL_STATE, userReducer } from './user/store';
-import { User } from "app/user/user";
+import { User } from "./user/user";
 //import { IMessagingState, MESSAGING_INITIAL_STATE, messagingReducer } from './messaging/store';
 
 export interface IAppState {

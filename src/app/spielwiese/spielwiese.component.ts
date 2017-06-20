@@ -1,6 +1,6 @@
 import { Component, OnInit, OnDestroy, OnChanges, SimpleChanges } from '@angular/core';
 import { AbstractControl, FormControl, FormGroup, FormBuilder, Validators } from "@angular/forms";
-import { UsernameInputComponent } from "app/spielwiese/username-input.component";
+import { UsernameInputComponent } from "./username-input.component";
 
 
 @Component({

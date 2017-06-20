@@ -4,7 +4,6 @@ import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 import { OAuthService } from "angular-oauth2-oidc/dist";
-import { Cookie } from 'ng2-cookies';
 import { Router } from "@angular/router";
 
 @Injectable()
